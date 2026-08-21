@@ -22,8 +22,10 @@ outside a store.
   releases, so the latest-release URL above never changes
 - The SHA-256 checksum of that APK
 - The `aapt2 dump permissions` output of that exact signed APK — the app
-  declares no Android permissions, not even INTERNET, and every release
-  publishes this proof
+  requests no system permissions, not even INTERNET, and every release
+  publishes this proof. The dump's only entry is an app-self-defined AndroidX
+  signature guard (`DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`) that grants
+  access to nothing
 
 ## Verify a download
 
